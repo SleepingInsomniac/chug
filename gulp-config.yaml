@@ -1,0 +1,44 @@
+default:
+  watchpaths:
+    styles:
+      - ./**.scss
+    scripts:
+      - ./**.js
+    markup:
+      - ./**.haml
+    server: app.rb
+  
+  stylesheets:
+    sources:
+      - ./**.scss
+      - ./**.scss
+    dest: public/assets/
+    options:
+      sourcemap: true
+      style: nested
+      
+  scripts:
+    sources:
+      - ./**.js
+      - ./**.js
+    dest: public/assets/
+    options:
+      sourcemap: true
+  
+  vendor:
+    sources:
+      - vendor/*.js
+    dest: public/vendor/
+    
+  browsersync:
+    proxy: localhost:9292
+    
+  server:
+    cmd: rackup
+    opts:
+      - '-p'
+      - '9292'
+    
+test:
+
+production:
